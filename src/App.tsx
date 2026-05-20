@@ -56,6 +56,7 @@ function App() {
         <div className="app-shell__glow app-shell__glow--a" />
         <div className="app-shell__glow app-shell__glow--b" />
         {/* CODERABBIT TEST: I am a contributor modifying the global shell! */}
+        {/* CODERABBIT TEST: I am a contributor modifying the global shell! */}
         <div className="app-shell__frame">
           <aside className="panel panel--left">
             <div className="brand-block">
