@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+# AlgoScope ML
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![React](https://img.shields.io/badge/React-18.x-blue?style=flat-square&logo=react)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
 
-Currently, two official plugins are available:
+**An interactive, step-by-step visualizer for machine learning algorithms built natively for the browser.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+AlgoScope ML bridges the gap between abstract mathematical formulas and visual understanding. By breaking down complex algorithms into interactive, frame-by-frame SVG animations, we make machine learning accessible, intuitive, and highly interactive.
 
-## React Compiler
+*(Insert a GIF here showing the K-Means algorithm smoothly grouping data points)*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## The Architecture: "Shell and Slot"
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+AlgoScope ML is engineered specifically for open-source scalability and easy onboarding. You do not need to understand the entire codebase to contribute! 
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+We use a **"Shell and Slot"** architecture:
+* **The Shell (Global):** Handles the dark-mode dashboard, playback controls, algorithm selection, and dynamic metrics parsing.
+* **The Slot (Local):** A perfectly isolated React component where your algorithm lives. 
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**Want to add an algorithm?** You just bring the math and draw the SVG. The global shell handles the rest automatically.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Quick Start (Local Development)
+
+To get the engine running on your local machine:
+
+```bash
+# 1. Clone the repository
+git clone [https://github.com/YOUR-USERNAME/algoscope-ml.git](https://github.com/YOUR-USERNAME/algoscope-ml.git)
+
+# 2. Navigate into the directory
+cd algoscope-ml
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the Vite development server
+npm run dev
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## How to Contribute
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+We are actively looking for contributors to help expand our algorithm library! Whether you want to build a simple K-Nearest Neighbors visualizer or tackle a complex Support Vector Machine, there is a place for you here.
+
+**The Workflow:**
+
+1. Check our [Issues Tab](https://www.google.com/search?q=https://github.com/YOUR-USERNAME/algoscope-ml/issues) for an algorithm that needs building, or open a new issue proposing one.
+2. Read our detailed **[Contribution Guide](https://www.google.com/search?q=.github/CONTRIBUTING.md)** (It takes 3 minutes and explains the exact blueprint you need to follow).
+3. Duplicate the `src/algorithms/implemented/kmeans` template folder to start building.
+4. Submit your PR!
+
+---
+
+## Tech Stack
+
+* **Core:** React (TypeScript)
+* **Build Tool:** Vite
+* **Styling:** Tailwind CSS v4
+* **Icons:** Lucide React
+* **Rendering Engine:** Native SVG DOM manipulation
+
 ```
