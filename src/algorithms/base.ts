@@ -1,12 +1,17 @@
-import { Point, VisualizerState } from '../types';
+// src/algorithms/base.ts
+import { VisualizerState, MLMetrics, AlgorithmParam } from '../types';
 
 export interface AlgorithmBlueprint {
+  id: string;
   name: string;
-  description: string;
+  shortDescription: string;
+  category: string; // Used for grouping in the dropdown
+  metrics: MLMetrics;
   
-  // Generates the initial random data points on canvas load
-  initialize: (width: number, height: number) => VisualizerState;
+  // Default parameters the algorithm needs (e.g., K for K-Means)
+  defaultParams: AlgorithmParam[];
   
-  // Takes the current state and returns the mathematically calculated next step
-  nextStep: (currentState: VisualizerState) => VisualizerState;
+  // The lifecycle methods
+  initialize: (width: number, height: number, params: AlgorithmParam[]) => VisualizerState;
+  nextStep: (currentState: VisualizerState, params: AlgorithmParam[]) => VisualizerState;
 }
