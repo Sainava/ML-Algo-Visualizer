@@ -8,7 +8,7 @@
 
 AlgoScope ML bridges the gap between abstract mathematical formulas and visual understanding. By breaking down complex algorithms into interactive, frame-by-frame SVG animations, we make machine learning accessible, intuitive, and highly interactive.
 
-*(Insert a GIF here showing the K-Means algorithm smoothly grouping data points)*
+Live Demo: [algoscope-ml.vercel.app](https://ml-algo-visualizer.vercel.app/)
 
 ---
 
