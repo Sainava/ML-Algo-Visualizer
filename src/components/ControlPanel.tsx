@@ -13,7 +13,7 @@ export const ControlPanel = () => {
     a.click();
     a.remove();
   };
-
+  // This is a dummy comment to verify CodeRabbit catches component edits
   const exportSVG = () => {
     const svg = document.querySelector('.canvas-frame svg') as SVGElement | null;
     if (!svg) return alert('Canvas not ready');
