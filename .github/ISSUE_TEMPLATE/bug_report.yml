@@ -1,0 +1,40 @@
+name: Bug Report
+description: Report a broken algorithm, a calculation error, or a UI glitch.
+title: "[Bug]: <Short description>"
+labels: ["bug", "triage"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Where is the issue occurring?
+      options:
+        - Global Shell / Dashboard UI
+        - K-Means Clustering Algorithm
+        - Linear Regression Algorithm
+        - Build system / Dependencies (Vite/Npm)
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps To Reproduce
+      description: How do we make this bug happen?
+      placeholder: |
+        1. Select Linear Regression
+        2. Crank Noise Level to 100
+        3. Click "Play"
+        4. See line fly off the screen
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected vs Actual Behavior
+      placeholder: The line should stabilize, but instead it vanishes.

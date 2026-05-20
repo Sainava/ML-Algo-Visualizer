@@ -1,0 +1,18 @@
+name: UI / UX Improvement
+description: Propose a design change, a new icon style, or layout refinement.
+title: "[UI]: <Area of improvement>"
+labels: ["ui-ux", "enhancement"]
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What needs to be improved?
+      description: Describe the specific UI component or layout you want to upgrade.
+      placeholder: The slider accent colors look a bit flat; we should add a subtle glow effect...
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Proposed Solution
+      description: How do you plan to achieve this using Tailwind?

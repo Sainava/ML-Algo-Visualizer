@@ -1,0 +1,44 @@
+name: Propose a New Algorithm
+description: Suggest a new machine learning algorithm to be added to the visualizer.
+title: "[Algo]: <Algorithm Name>"
+labels: ["enhancement", "new-algorithm"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to propose a new algorithm! Please fill out this form completely.
+  - type: input
+    id: algo-name
+    attributes:
+      label: Algorithm Name
+      placeholder: e.g., K-Nearest Neighbors (KNN)
+    validations:
+      required: true
+  - type: dropdown
+    id: paradigm
+    attributes:
+      label: Learning Paradigm
+      options:
+        - Supervised Learning
+        - Unsupervised Learning
+        - Reinforcement Learning
+        - Deep Learning
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Why should we add this?
+      description: Explain what makes this algorithm a good fit for visual learning.
+      placeholder: KNN is highly visual because we can draw radius circles around the target point...
+    validations:
+      required: true
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Architecture Agreement
+      options:
+        - label: I have read the `CONTRIBUTING.md` guide and understand the "Shell and Slot" architecture.
+          required: true
+        - label: I would like to be assigned to this issue so I can build it myself.
+          required: false
